@@ -12,22 +12,24 @@ CPPFLAGS	= 	-Wall -Wextra -Werror
 
 NAME		=	main
 
+EXEC		= 	iphone
+
 RM			=	rm -rf	
 
-all:		${OBJS} ${NAME}
+all:	 	${EXEC}
 
 ${OBJS_DIR}/%.o: 	%.cpp $(OBJDIRS) ${INCLUDES} Makefile
 			${MKDIR} $(@D) $(DMPDIR)$(@D)
 			${CPP} ${CPPFLAGS} ${LIBINCLUDES} -c $< -o $@
 
-${NAME}:	${NAME}.cpp ${OBJS}
-			$(CPP) ${CPPFLAGS} ${OBJS} -o ${NAME}
+${EXEC}:	${NAME}.cpp ${OBJS}
+			$(CPP) ${CPPFLAGS} ${OBJS} -o ${EXEC}
 			
 clean:
 			${RM} ${OBJS}
 
 fclean:		clean
-			${RM} ${NAME} objects
+			${RM} ${EXEC} objects
 
 re:			fclean all
 
