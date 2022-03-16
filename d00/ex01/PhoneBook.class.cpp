@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 10:55:05 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/14 13:37:09 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/16 11:31:20 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ PhoneBook::PhoneBook(void) {
 void	PhoneBook::add_contact(void) {
 	if (this->index == 8)
 		this->index = 0;
-	std::cout << this->index << std::endl;
-	this->contacts[this->index].create_contact();
+	this->contacts[this->index].set_first_name();
+	this->contacts[this->index].set_last_name();
+	this->contacts[this->index].set_nickname();
+	this->contacts[this->index].set_phone_number();
+	this->contacts[this->index].set_darkest_secret();
 	std::cout << std::endl;
 	this->index += 1;
 	if (this->size < 8)
@@ -48,11 +51,11 @@ void	PhoneBook::printLine(int index) const {
 	std::cout << "|";
 	printElement(std::to_string(index));
 	std::cout << "|";
-	printElement(this->contacts[index].first_name);
+	printElement(this->contacts[index].get_first_name());
 	std::cout << "|";
-	printElement(this->contacts[index].last_name);
+	printElement(this->contacts[index].get_last_name());
 	std::cout << "|";
-	printElement(this->contacts[index].nickname);
+	printElement(this->contacts[index].get_nickname());
 	std::cout << "|";
 	std::cout << std::endl;
 }
@@ -93,11 +96,11 @@ void	PhoneBook::search_contact(void) const {
 
 	if (i >= 0  && i <= this->size)
 	{
-		std::cout << this->contacts[i].first_name << std::endl;
-		std::cout << this->contacts[i].last_name << std::endl;
-		std::cout << this->contacts[i].nickname << std::endl;
-		std::cout << this->contacts[i].phone_number << std::endl;
-		std::cout << this->contacts[i].darkest_secret << std::endl;
+		std::cout << this->contacts[i].get_first_name() << std::endl;
+		std::cout << this->contacts[i].get_last_name() << std::endl;
+		std::cout << this->contacts[i].get_nickname() << std::endl;
+		std::cout << this->contacts[i].get_phone_number() << std::endl;
+		std::cout << this->contacts[i].get_darkest_secret() << std::endl;
 	}
 	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 10:52:27 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/14 12:47:15 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/16 11:35:59 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class PhoneBook {
 	public:
 
 		PhoneBook(void);
+		~PhoneBook(void){};
 		void add_contact(void);
 		void search_contact(void) const;
 
