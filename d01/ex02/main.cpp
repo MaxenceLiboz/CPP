@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 14:26:52 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/16 14:37:17 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/17 10:09:17 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ int	main(int argc, char **argv)
 	std::cout << "string: " << string << std::endl;
 	std::cout << "stringPTR: " << *stringPTR << std::endl;
 	std::cout << "stringREF: " << stringREF << std::endl;
+
+	return (0);
 }

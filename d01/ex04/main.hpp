@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 08:55:41 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/17 10:09:51 by mliboz           ###   ########.fr       */
+/*   Created: 2022/03/17 10:05:33 by mliboz            #+#    #+#             */
+/*   Updated: 2022/03/17 10:14:20 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#ifndef MAIN_HPP
+#define MAIN_HPP
 
-int main()
-{
-	Weapon club = Weapon("crude spiked club");
-	HumanA bob("Bob", club);
-	bob.attack();
-	club.setType("some other type of club");
-	bob.attack();
-	
-	Weapon club1 = Weapon("crude spiked club");
-	HumanB jim("Jim");
-	jim.setWeapon(club1);
-	jim.attack();
-	club1.setType("some other type of club");
-	jim.attack();
-	return (0);
-}
+#include <iostream>
+#include <fstream>
+
+#endif
