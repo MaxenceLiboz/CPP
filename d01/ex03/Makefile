@@ -3,7 +3,7 @@ OBJS		=	$(addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o})
 OBJS_DIR	=	objects
 MKDIR		=	mkdir -p
 
-INCLUDES	= Weapon.hpp HumanA.hpp HumanB.hpp
+INCLUDES	= 	Weapon.hpp HumanA.hpp HumanB.hpp
 
 CPP			= 	c++
 
