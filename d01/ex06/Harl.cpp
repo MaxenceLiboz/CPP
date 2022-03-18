@@ -6,13 +6,13 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 12:41:23 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/18 08:45:10 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/18 10:06:49 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-std::string Harl::_table[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+std::string Harl::_table[5] = {"DEBUG", "INFO", "WARNING", "ERROR", "OFF"};
 
 void	Harl::_debug(void) const{
 	std::cout << "[ DEBUG ]" << std::endl;
@@ -47,13 +47,15 @@ void	Harl::_off(void) const{
 void	Harl::complain(std::string level) {
 
  	int		index;
-	void	(Harl::*f[4])(void) const = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+	void	(Harl::*f[5])(void) const = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error, &Harl::_off};
 	
-	index = std::distance(_table, std::find(_table, _table + 4, level));
+	index = std::distance(_table, std::find(_table, _table + 5, level));
 	if (index >= 0 && index <= 3) {
 		while (index < 4)
 			(this->*f[index++])();		
 	}
-	else
+	else if (index == 4)
 		Harl::_off();
+	else
+		std::cout << "You lucky Harl don't understand you, so he can't complain" << std::endl;
 };

@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 12:40:58 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/18 08:41:07 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/18 10:04:36 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ class Harl
 		void	_error(void) const;
 		void	_off(void) const;
 		
-		static	std::string	_table[4];
+		static	std::string	_table[5];
 };
