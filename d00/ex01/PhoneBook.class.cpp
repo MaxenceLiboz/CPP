@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 10:55:05 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/16 12:46:35 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/18 10:21:33 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	PhoneBook::search_contact(void) const {
 			std::cout << std::endl << "Enter a valid index number: ";
 		std::getline(std::cin, contact);
 		std::istringstream(contact) >> i;
+		std::cout << i;
 		if (i == 0 && contact.compare("0") != 0)
 			i = -1;
 		index++;
