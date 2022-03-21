@@ -6,53 +6,50 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 13:03:51 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/21 11:15:06 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/21 14:58:47 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 
-int main(void) {
-	Fixed a (10);
-	Fixed b(2);
-	Fixed op;
-	Fixed const c(42.42f);
-	Fixed const d(b);
-	
-	std::cout << "True == " << true << "; False == " << false << std::endl << std::endl;
-	
-	std::cout << "a = " << a << "; b = " << b << std::endl;
-	std::cout << "a > b == " << (a > b) << std::endl;
-	std::cout << "a < b == " << (a < b) << std::endl << std::endl;
-	
-	a = b = 12;
-	std::cout << "a = " << a << "; b = " << b << std::endl;
-	std::cout << "a >= b == " << (a >= b) << std::endl;
-	std::cout << "a <= b == " << (a <= b) << std::endl;
-	std::cout << "a == b == " << (a == b) << std::endl;
-	std::cout << "a != b == " << (a != b) << std::endl << std::endl;
+float	getArea(Point const a, Point const b, Point const c) {
+	return std::abs((a.getX() * (b.getY() - c.getY())
+					+ b.getX() * (c.getY() - a.getY())
+					+ c.getX() * (a.getY() - b.getY()))
+					* 0.5f);
+}
 
-	a = 10;
-	b = 2;
-	std::cout << "a = " << a << "; b = " << b << "; op = " << op << std::endl;
-	std::cout << "op == a + b == " << (op = a + b) << std::endl;
-	std::cout << "op == a - b == " << (op = a - b) << std::endl;
-	std::cout << "op == a * b == " << (op = a * b) << std::endl;
-	std::cout << "op == a / b == " << (op = a / b) << std::endl << std::endl;
-	
-	a = 0;
-	std::cout << "a == " << a << std::endl;
-	std::cout << "++a == " << ++a << std::endl;
-	std::cout << "a == " << a << std::endl;
-	std::cout << "a++ == " << a++ << std::endl;
-	std::cout << "a == " << a << std::endl << std::endl;
 
-	std::cout << "a = " << a << "; b = " << b << std::endl;
-	std::cout << "min(a, b) == " << Fixed::min( a, b ) << std::endl;
-	std::cout << "max(a, b) == " << Fixed::max( a, b ) << std::endl << std::endl;
-	
-	std::cout << "c = " << c << "; d = " << d << std::endl;
-	std::cout << "min(c, d) == " << Fixed::min(c, d) << std::endl;
-	std::cout << "max(c, d) == " << Fixed::max(c, d) << std::endl;
-	return 0;
+bool	bsp(Point const a, Point const b, Point const c, Point const point) {
+	float	total_area;
+	float	area1;
+	float	area2;
+	float	area3;
+
+	total_area = getArea(a, b, c);
+	area1 = getArea(a, b, point);
+	area2 = getArea(a, c, point);
+	area3 = getArea(b, c, point);
+
+	return (total_area == area1 + area2 + area3);
+}
+
+int main(int argc, char **argv) {
+	Point	a(0, 0);
+	Point	b(4.8f, 4.9f);
+	Point	c(8.1f, 0.0f);
+
+	if (argc != 3) {
+		std::cout << "Use: ./canon [x] [y]" << std::endl;
+		return (0);
+	}
+	Point	point(std::atof(argv[1]), std::atof(argv[2]));
+
+	std::cout << "A" << a << "; B" << b << "; C" << c << std::endl;
+	if (bsp(a, b, c, point) == true)
+		std::cout << "Point" << point << " is inside" << std::endl;
+	else
+		std::cout << "Point" << point << " is outside" << std::endl;
+	return (0);
 }

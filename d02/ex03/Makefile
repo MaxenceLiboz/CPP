@@ -1,9 +1,9 @@
-SRCS		=	main.cpp Fixed.cpp
+SRCS		=	main.cpp Fixed.cpp Point.cpp
 OBJS		=	$(addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o})
 OBJS_DIR	=	objects
 MKDIR		=	mkdir -p
 
-INCLUDES	=	Fixed.hpp
+INCLUDES	=	Fixed.hpp Point.hpp
 
 CPP			= 	c++
 
