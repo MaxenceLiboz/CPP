@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 10:55:05 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/18 10:21:33 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/28 13:40:22 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,35 +73,59 @@ void	PhoneBook::search_contact(void) const {
 	int			i;
 
 	index = 0;
-	_printHeader();
-	while (index < this->_size)
-	{
-		_printLine(index);
-		index++;
-	}
-	index = 0;
-	do {
-		if (this->_size == 0)
-			break ;
-		if (index == 0)
-			std::cout << std::endl << "Which contact you want to see in detail (index): ";
-		else
-			std::cout << std::endl << "Enter a valid index number: ";
-		std::getline(std::cin, contact);
-		std::istringstream(contact) >> i;
-		std::cout << i;
-		if (i == 0 && contact.compare("0") != 0)
-			i = -1;
-		index++;
-	} while (contact.empty() == true || i + 1 > this->_size || i < 0);
+	i = 0;
+	// do {
+	// 	if (this->_size == 0)
+	// 		break ;
+	// 	if (index == 0)
+	// 		std::cout << std::endl << "Which contact you want to see in detail (index): ";
+	// 	else
+	// 		std::cout << std::endl << "Enter a valid index number: ";
+	// 	std::istringstream(contact) >> i;
+	// 	std::cout << i;
+	// 	if (i == 0 && contact.compare("0") != 0)
+	// 		i = -1;
+	// 	index++;
+	// 	if (contact.empty() == false && i + 1 < this->_size && i > 0)
+	// 		break ;
+	// } while (std::getline(std::cin, contact));
 
-	if (i >= 0  && i <= this->_size)
-	{
-		std::cout << this->_contacts[i].get_first_name() << std::endl;
-		std::cout << this->_contacts[i].get_last_name() << std::endl;
-		std::cout << this->_contacts[i].get_nickname() << std::endl;
-		std::cout << this->_contacts[i].get_phone_number() << std::endl;
-		std::cout << this->_contacts[i].get_darkest_secret() << std::endl;
+	if (this->_size != 0) {
+		
+		_printHeader();
+		
+		while (index < this->_size)
+		{
+			_printLine(index);
+			index++;
+		}
+		
+		index = 0;
+		std::cout << std::endl << "Which contact you want to see in detail (index): ";
+		while (std::getline(std::cin, contact)) {
+			
+			std::istringstream(contact) >> i;
+			if (i == 0 && contact.compare("0") != 0)
+				i = -1;
+
+			if (i >= 0 && i < this->_size) {
+				std::cout << this->_contacts[i].get_first_name() << std::endl;
+				std::cout << this->_contacts[i].get_last_name() << std::endl;
+				std::cout << this->_contacts[i].get_nickname() << std::endl;
+				std::cout << this->_contacts[i].get_phone_number() << std::endl;
+				std::cout << this->_contacts[i].get_darkest_secret() << std::endl;
+				return ;
+			}
+			index++;
+			if (index == 0)
+				std::cout << std::endl << "Which contact you want to see in detail (index): ";
+			else
+				std::cout << std::endl << "Enter a valid index number: ";
+		}
+		std::cout << std::endl << "Good bye!" << std::endl;
+		exit (0);
 	}
+	else
+		std::cout << std::endl << "No contact saved" << std::endl;
 	std::cout << std::endl;
 }

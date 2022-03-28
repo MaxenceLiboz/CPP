@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 10:18:08 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/16 11:34:19 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/28 13:18:41 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,18 @@
 void	Contact::_set_string_attribute(std::string *attribute, std::string prompt)
 {
 	std::string		get;
-	while (get.empty() == true)
+	
+	std::cout << prompt;
+	while (std::getline(std::cin, get))
 	{
+		if (get.empty() == false) {
+			attribute->assign(get);
+			return ;
+		}
 		std::cout << prompt;
-		std::getline(std::cin, get);
 	}
-	attribute->assign(get);
+	std::cout << std::endl << "Good bye !" << std::endl;
+	exit(0);
 }
 
 void Contact::set_first_name(void) {
@@ -46,13 +52,17 @@ void Contact::set_darkest_secret(void) {
 void Contact::set_phone_number(void) {
 	
 	std::string		get;
-	while (get.empty() == true
-	|| (get.find_first_not_of("0123456789") == std::string::npos) == false)
+	std::cout << "Phone number (only digits): ";
+	while (std::getline(std::cin, get))
 	{
+		if (get.empty() == false && (get.find_first_not_of("0123456789") == std::string::npos) != false) {
+			this->_phone_number.assign(get);
+			return ;
+		}
 		std::cout << "Phone number (only digits): ";
-		std::getline(std::cin, get);
 	}
-	this->_phone_number.assign(get);
+	std::cout << "Good bye !" << std::endl;
+	exit(0);
 }
 
 std::string Contact::get_first_name(void) const {return(this->_first_name);}

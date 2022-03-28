@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 10:23:28 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/16 11:29:56 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/28 13:13:05 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,15 @@ int	main(void)
 	bool		redo;
 
 	redo = false;
-	while (line.compare("EXIT") != 0)
+	std::cout << std::setfill('-') << std::setw(80) << " " << std::endl;
+	std::cout << "ADD: add a contact | SEARCH: search a contact | ";
+	std::cout << "EXIT: exit the program" << std::endl;
+	std::cout << std::endl;
+	std:: cout << "Input: ";
+	while (std::getline(std::cin, line))
 	{
-		if (redo == false)
-		{
-			std::cout << std::setfill('-') << std::setw(80) << " " << std::endl;
-			std::cout << "ADD: add a contact | SEARCH: search a contact | ";
-			std::cout << "EXIT: exit the program" << std::endl;
-			std::cout << std::endl;
-			std:: cout << "Input: ";
-		}
-		else
-			std:: cout << "Wrong input try again: ";
-		std::getline(std::cin, line);
+		if (line.compare("EXIT") == 0)
+			break ;
 		if (line.compare("ADD") == 0)
 		{
 			redo = false;
@@ -44,5 +40,16 @@ int	main(void)
 		}
 		else
 			redo = true;
+		if (redo == false)
+		{
+			std::cout << std::setfill('-') << std::setw(80) << " " << std::endl;
+			std::cout << "ADD: add a contact | SEARCH: search a contact | ";
+			std::cout << "EXIT: exit the program" << std::endl;
+			std::cout << std::endl;
+			std:: cout << "Input: ";
+		}
+		else
+			std:: cout << "Wrong input try again: ";
 	}
+	std::cout << std::endl << "Good bye !" << std::endl;
 }
