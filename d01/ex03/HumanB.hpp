@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:00:15 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/17 09:29:59 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 14:32:47 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class HumanB {
 
 	public:
 		HumanB(std::string name);
-		~HumanB(){};
+		~HumanB();
 
 		std::string	name;
 		Weapon 		*weapon;

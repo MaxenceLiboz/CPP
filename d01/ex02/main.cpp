@@ -6,20 +6,16 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 14:26:52 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/31 08:58:59 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 14:31:15 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	std::string	string;
-	if (argc == 1)
-		string.assign("Default");
-	else
-		string.assign(argv[1]);
-		
+	std::string	string("HI THIS IS BRAIN");
+	
 	std::string *stringPTR = &string;	
 	std::string &stringREF = string;
 	

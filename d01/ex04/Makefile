@@ -11,7 +11,7 @@ CPPFLAGS	= 	-Wall -Wextra -Werror
 
 NAME		=	main
 
-EXEC		= 	main
+EXEC		= 	replace
 
 RM			=	rm -rf	
 

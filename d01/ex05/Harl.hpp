@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 12:40:58 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/17 15:38:27 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 15:05:02 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 class Harl
 {
 	public:
-		Harl(){};
-		~Harl(){};
+		Harl();
+		~Harl();
 
 		void	complain(std::string level);
 		

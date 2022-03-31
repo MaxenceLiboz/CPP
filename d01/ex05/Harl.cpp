@@ -6,13 +6,16 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 12:41:23 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/17 15:43:53 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 15:05:21 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 std::string Harl::_table[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+Harl::Harl(){}
+Harl::~Harl(){}
 
 void	Harl::_debug(void) const{
 	std::cout << "I love having extra bacon for my ";

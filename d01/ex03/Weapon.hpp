@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 08:57:15 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/17 09:09:53 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 14:44:18 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Weapon {
 
 	public:
 		Weapon(std::string weapon);
-		Weapon(){};
-		~Weapon(){};
+		Weapon();
+		~Weapon();
 
-		std::string getType(void) const;
+		const std::string & getType(void) const;
 		void setType(std::string weapon);
 };
 
