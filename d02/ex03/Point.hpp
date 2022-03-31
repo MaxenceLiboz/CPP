@@ -11,15 +11,16 @@ class Point
 		Point(float x, float y);
 		~Point(){};
 
-		Point & operator=(Point const & point);
 
 		float	getX(void) const;
 		float	getY(void) const;
 
 	private:
-		Fixed	_x;
-		Fixed	_y;
+		const Fixed	_x;
+		const Fixed	_y;
 		static int		_fixed_point_fractional_bits;
+		
+		Point & operator=(Point const & point);
 };
 
 std::ostream & operator<<(std::ostream & o, Point const & src);
