@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:38:44 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/17 15:43:21 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 09:13:08 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main(int argc, char **argv) {
 	Harl	harl;
+	const	std::string table[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	if (argc != 2) {
 		std::cout << "DEBUG: ";
@@ -26,8 +27,13 @@ int	main(int argc, char **argv) {
 		harl.complain("ERROR");
 	}
 	else {
-		std::cout << argv[1] << ": ";
-		harl.complain(argv[1]);
+		if (std::distance(table, std::find(table, table + 4, argv[1])) < 4)
+		{
+			std::cout << argv[1] << ": ";
+			harl.complain(argv[1]);
+		}
+		else
+			std::cout << "Enter a valid argument: [DEBUG, INFO, WARNING, ERROR]" << std::endl;
 	}
 	return (0);
 }

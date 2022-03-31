@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:38:44 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/18 08:33:04 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 09:16:39 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv) {
 	Harl	harl;
 
 	if (argc != 2)
-		std::cout << "Use a argmument to listen to Harl!" << std::endl;
+		harl.complain("I am tired");
 	else {
 		harl.complain(argv[1]);
 	}

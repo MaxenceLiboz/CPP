@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 14:26:52 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/17 10:09:17 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 08:58:59 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	std::string	string;
 	if (argc == 1)
-		string.assign("ALED");
+		string.assign("Default");
 	else
 		string.assign(argv[1]);
 		

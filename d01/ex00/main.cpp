@@ -6,24 +6,11 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 13:42:19 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/16 14:02:39 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 08:52:29 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
-
-Zombie*	newZombie(std::string name) {
-	
-	Zombie *newZombie = new Zombie(name);
-	newZombie->announce();
-	return (newZombie);
-}
-
-void	randomChump(std::string name) {
-	Zombie newZombie(name);
-	newZombie.announce();
-}
 
 int	main(void) {
 

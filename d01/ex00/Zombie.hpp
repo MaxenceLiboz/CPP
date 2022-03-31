@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 13:14:18 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/16 14:11:27 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/03/31 08:52:23 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ class Zombie {
 
 		void	announce(void) const;
 };
+
+void	randomChump(std::string name);
+Zombie*	newZombie(std::string name);
 
 #endif

@@ -1,4 +1,4 @@
-SRCS		=	main.cpp
+SRCS		=	main.cpp ft_read.cpp ft_write.cpp ft_replace_all.cpp
 OBJS		=	$(addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o})
 OBJS_DIR	=	objects
 MKDIR		=	mkdir -p

@@ -1,4 +1,4 @@
-SRCS		=	Zombie.cpp main.cpp
+SRCS		=	Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
 OBJS		=	$(addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o})
 OBJS_DIR	=	objects
 MKDIR		=	mkdir -p

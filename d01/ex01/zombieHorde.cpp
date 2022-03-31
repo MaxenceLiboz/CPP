@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 13:42:19 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/31 08:56:44 by mliboz           ###   ########.fr       */
+/*   Created: 2022/03/31 08:54:14 by mliboz            #+#    #+#             */
+/*   Updated: 2022/03/31 08:56:42 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(int argc, char **argv) {
+Zombie*	zombieHorde(int N, std::string name) {
 	int			i;
-	int			N;
-	std::string	name;
-
-	N = 5;
-	name.assign("THEO");
-	if (argc == 2)
-		N = atoi(argv[1]);
-	else if (argc == 3) {
-		N = atoi(argv[1]);
-		name.assign(argv[2]);
-	}
+	std::string	tmp;
+	Zombie		*horde = new Zombie[N];
 	
-	Zombie	*horde = zombieHorde(N, name);
-
 	i = 0;
+	tmp.assign(name);
 	while (i < N)
-		horde[i++].announce();
-	delete [] horde;
-	return (0);
+	{
+		name = tmp + " " + std::to_string(i);
+		horde[i++].setName(name);
+	}
+	return (horde);
 }

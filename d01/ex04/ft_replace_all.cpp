@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ft_replace_all.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 13:42:19 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/31 08:56:44 by mliboz           ###   ########.fr       */
+/*   Created: 2022/03/31 09:05:15 by mliboz            #+#    #+#             */
+/*   Updated: 2022/03/31 09:05:21 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "main.hpp"
 
-int	main(int argc, char **argv) {
-	int			i;
-	int			N;
-	std::string	name;
-
-	N = 5;
-	name.assign("THEO");
-	if (argc == 2)
-		N = atoi(argv[1]);
-	else if (argc == 3) {
-		N = atoi(argv[1]);
-		name.assign(argv[2]);
-	}
+void	ft_replace_all(std::string	*content, std::string to_replace,
+			std::string replace_with) {
 	
-	Zombie	*horde = zombieHorde(N, name);
+	std::ofstream	ofs;
+	int				i_replace;
 
-	i = 0;
-	while (i < N)
-		horde[i++].announce();
-	delete [] horde;
-	return (0);
+	i_replace = content->find(to_replace);
+	while (i_replace != -1)
+	{
+		content->erase(i_replace, to_replace.size());
+		content->insert(i_replace, replace_with);	
+		i_replace = content->find(to_replace);
+	}
 }
