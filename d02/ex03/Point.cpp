@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:14:19 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/31 14:58:34 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/04/04 09:24:28 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ Point::Point(Point const & point) : _x(point.getX()), _y(point.getY())
 }
 
 Point::Point(float x, float y) : _x(x), _y(y) {}
+
+Point::~Point(){}
 
 Point & Point::operator=(Point const &) {return(*this);}
 

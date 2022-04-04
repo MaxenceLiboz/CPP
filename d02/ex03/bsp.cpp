@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:01:42 by mliboz            #+#    #+#             */
-/*   Updated: 2022/04/01 14:01:52 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/04/04 09:22:26 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point) {
 	area1 = getArea(a, b, point);
 	area2 = getArea(a, c, point);
 	area3 = getArea(b, c, point);
+
+	if (area1 == 0 || area2 == 0 || area3 == 0)
+		return (false);
 
 	return (total_area == area1 + area2 + area3);
 }

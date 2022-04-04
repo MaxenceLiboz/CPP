@@ -6,11 +6,13 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 13:03:51 by mliboz            #+#    #+#             */
-/*   Updated: 2022/04/01 14:07:33 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/04/04 09:26:24 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
+
+// To verify the value, you can use: https://www.triangle-calculator.com/?what=vc
 
 int main(int argc, char **argv) {
 	Point	a(0, 0);

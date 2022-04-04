@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 13:03:51 by mliboz            #+#    #+#             */
-/*   Updated: 2022/04/01 13:59:26 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/04/04 09:20:08 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ int main(void) {
 	Fixed const c(42.42f);
 	Fixed const d(b);
 	
-	// std::cout << GREEN << "True == " << true << "; False == " << false << END << std::endl << std::endl;
-	
 	std::cout << std::endl << "a\t=\t" << GREEN << a << END << std::endl;
 	std::cout << "b\t=\t" << GREEN << b << END << std::endl;
 	printTest(a > b, "a > b");
-	printTest(a < b, "a > b");
+	printTest(a < b, "a < b");
 		
 	std::cout << std::endl;
 	a = b = 12;
