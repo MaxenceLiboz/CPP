@@ -1,17 +1,17 @@
-SRCS		=	main.cpp Fixed.cpp Point.cpp
+SRCS		=	main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS		=	$(addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o})
 OBJS_DIR	=	objects
 MKDIR		=	mkdir -p
 
-INCLUDES	=	Fixed.hpp Point.hpp
+INCLUDES	=	Fixed.hpp Point.hpp main.hpp
 
-CPP			= 	c++
+CPP			= 	c++ -std=c++98
 
 CPPFLAGS	= 	-Wall -Wextra -Werror
 
 NAME		=	main
 
-EXEC		= 	canon
+EXEC		= 	fixed
 
 RM			=	rm -rf	
 

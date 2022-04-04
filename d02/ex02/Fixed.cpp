@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 13:09:32 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/21 11:09:48 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/04/01 13:09:27 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,14 +133,14 @@ Fixed	Fixed::operator-(Fixed const & src) {
 Fixed	Fixed::operator*(Fixed const & src) {
 	Fixed	tmp;
 	
-	tmp._fixed = (this->_fixed * src.getRawBits()) >> this->_fixed_point_fractional_bits;
+	tmp._fixed = this->_fixed * src.toFloat();
 	return tmp;
 }
 
 Fixed	Fixed::operator/(Fixed const & src) {
 	Fixed	tmp;
 
-	tmp._fixed = (this->getRawBits() * (1 << this->_fixed_point_fractional_bits) / src.getRawBits());
+	tmp._fixed = this->getRawBits() / src.toFloat();
 	return tmp;
 }
 

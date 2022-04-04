@@ -5,13 +5,13 @@ MKDIR		=	mkdir -p
 
 INCLUDES	=	Fixed.hpp
 
-CPP			= 	c++
+CPP			= 	c++ -std=c++98
 
 CPPFLAGS	= 	-Wall -Wextra -Werror
 
 NAME		=	main
 
-EXEC		= 	canon
+EXEC		= 	fixed
 
 RM			=	rm -rf	
 

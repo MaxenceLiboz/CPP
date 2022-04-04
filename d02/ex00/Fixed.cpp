@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 13:09:32 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/18 13:46:16 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/04/01 12:59:14 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 int const	Fixed::_comma = 8;
 
 Fixed::Fixed(void) : _fixed(0) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << GREEN << "Default constructor called" << END << std::endl;
 }
 
 Fixed::Fixed(Fixed const & src) {
 	*this = src;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << GREEN << "Copy constructor called" << END << std::endl;
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << RED << "Destructor called" << END << std::endl;
 }
 
 Fixed &	Fixed::operator=(Fixed const & src) {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << GREEN << "Assignation operator called" << END << std::endl;
 	this->_fixed = src.getRawBits();
 	return *this;
 }

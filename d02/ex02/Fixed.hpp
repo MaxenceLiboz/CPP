@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 13:04:12 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/21 11:08:48 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/04/01 13:11:54 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <cmath>
+#define RED "\e[1;31m"
+#define GREEN "\e[1;32m"
+#define END "\033[0m"
 
 class Fixed {
 
