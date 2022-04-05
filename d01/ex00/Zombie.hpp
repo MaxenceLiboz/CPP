@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 13:14:18 by mliboz            #+#    #+#             */
-/*   Updated: 2022/03/31 08:52:23 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/04/05 10:25:33 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Zombie {
 	private:
 	
 		std::string _name;
+		Zombie();
 	public:
 	
 		Zombie(std::string name);

@@ -11,7 +11,7 @@ CPPFLAGS	= 	-Wall -Wextra -Werror
 
 NAME		=	main
 
-EXEC		= 	replace
+EXEC		= 	replacer
 
 RM			=	rm -rf	
 
@@ -28,7 +28,7 @@ clean:
 			${RM} ${OBJS}
 
 fclean:		clean
-			${RM} ${EXEC} objects outfile
+			${RM} ${EXEC} objects outfile *.replace
 
 re:			fclean all
 
