@@ -6,7 +6,7 @@
 /*   By: maxenceliboz <maxenceliboz@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 10:30:43 by maxencelibo       #+#    #+#             */
-/*   Updated: 2022/04/07 11:24:20 by maxencelibo      ###   ########.fr       */
+/*   Updated: 2022/04/08 14:20:55 by maxencelibo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int main()
 
 	delete k;
 	delete l;
+
+	Cat* cat = new Cat();
+	std::cout << "idea: " << cat->getBrain()->getIdea(0) << std::endl;;
 	
+	delete cat;
 	return 0;
 }

@@ -58,5 +58,17 @@ void	Cat::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+const Brain*	Cat::getBrain() const { return (this->brain); }
+
+void			Cat::setBrain( unsigned int index, std::string idea)
+{
+	this->brain->ideas[index] = idea;
+}
+
+void			Cat::setBrain( std::string ideas[100])
+{
+	for (int i = 0; i < 100; i++)
+		this->brain->ideas[i] = ideas[i];
+}
 
 /* ************************************************************************** */
