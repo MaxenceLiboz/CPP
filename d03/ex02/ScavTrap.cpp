@@ -1,0 +1,88 @@
+#include "ScavTrap.hpp"
+
+/*
+** ------------------------------- CONSTRUCTOR --------------------------------
+*/
+
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	this->_hitPoint = 100;
+	this->_energyPoint = 50;
+	this->_attackDamage = 20;
+	std::cout << BLUE << "ScavTrap default constructor called" << END << std::endl;
+}
+
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
+{
+	this->_hitPoint = 100;
+	this->_energyPoint = 50;
+	this->_attackDamage = 20;
+	std::cout << BLUE << "ScavTrap copy constructor called" << END << std::endl;
+}
+
+ScavTrap::ScavTrap( const ScavTrap & src )
+{
+	*this = src;
+	std::cout << BLUE << "ScavTrap copy constructor called" << END << std::endl;
+}
+
+
+/*
+** -------------------------------- DESTRUCTOR --------------------------------
+*/
+
+ScavTrap::~ScavTrap()
+{
+	std::cout << PURPLE << "ScavTrap destructor called" << END << std::endl;
+}
+
+
+/*
+** --------------------------------- OVERLOAD ---------------------------------
+*/
+
+ScavTrap &				ScavTrap::operator=( ScavTrap const & rhs )
+{
+	this->_name = rhs._name;
+	this->_hitPoint = rhs._hitPoint;
+	this->_energyPoint = rhs._energyPoint;
+	this->_attackDamage = rhs._attackDamage;
+	return *this;
+}
+
+std::ostream &			operator<<( std::ostream & o, ScavTrap const & i )
+{
+	o << "Scavtrap " << i.getName() << "\thave " << i.getHitPoint() << " hit points";
+	o << ", " << i.getEnergyPoint() << " energy points, " << i.getAttackDamage();
+	o << " attack damage." << std::endl;
+	return o;
+	return o;
+}
+
+
+/*
+** --------------------------------- METHODS ----------------------------------
+*/
+
+void	ScavTrap::guardGate() const
+{
+	std::cout << "ScavTrap " << this->getName() << " entered in gate keeper mode !" << std::endl;
+}
+
+void	ScavTrap::attack( const std::string & target )
+{
+	if (this->getHitPoint() > 0 || this->getEnergyPoint() > 0)
+	{
+		std::cout << "ScavTrap " << this->getName() << " is attacking " << target;
+		std::cout << ", causing " << this->getAttackDamage();
+		std::cout << " damage points." << std::endl;
+	}
+}
+
+
+/*
+** --------------------------------- ACCESSOR ---------------------------------
+*/
+
+
+/* ************************************************************************** */
