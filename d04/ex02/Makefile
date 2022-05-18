@@ -1,20 +1,22 @@
 SRCS		=	main.cpp 								\
-				srcs/Animal.cpp 						\
+				srcs/AAnimal.cpp 						\
 				srcs/Cat.cpp 							\
 				srcs/Dog.cpp 							\
 				srcs/WrongAnimal.cpp 					\
 				srcs/WrongCat.cpp						\
+				srcs/Brain.cpp							\
 
 
 OBJS		=	$(addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o})
 OBJS_DIR	=	objects
 MKDIR		=	mkdir -p
 
-INCLUDES	=	includes/Animal.hpp 					\
+INCLUDES	=	includes/AAnimal.hpp 					\
 				includes/Cat.hpp 						\
 				includes/Dog.hpp 						\
 				includes/WrongAnimal.hpp 				\
 				includes/WrongCat.hpp					\
+				includes/Brain.hpp						\
 
 CPP			= 	c++ -std=c++98
 
@@ -22,7 +24,7 @@ CPPFLAGS	= 	-Wall -Wextra -Werror
 
 NAME		=	main
 
-EXEC		= 	diamondTrap
+EXEC		= 	poly
 
 RM			=	rm -rf	
 

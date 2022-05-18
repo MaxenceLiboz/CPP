@@ -1,10 +1,22 @@
-SRCS		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp \
-				Brain.cpp
+SRCS		=	main.cpp 								\
+				srcs/Animal.cpp 						\
+				srcs/Cat.cpp 							\
+				srcs/Dog.cpp 							\
+				srcs/WrongAnimal.cpp 					\
+				srcs/WrongCat.cpp						\
+				srcs/Brain.cpp							\
+
+
 OBJS		=	$(addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o})
 OBJS_DIR	=	objects
 MKDIR		=	mkdir -p
 
-INCLUDES	=	Animal.hpp Cat.hpp Dog.hpp WrongAnimal.cpp WrongCat.cpp Brain.hpp
+INCLUDES	=	includes/Animal.hpp 					\
+				includes/Cat.hpp 						\
+				includes/Dog.hpp 						\
+				includes/WrongAnimal.hpp 				\
+				includes/WrongCat.hpp					\
+				includes/Brain.hpp						\
 
 CPP			= 	c++ -std=c++98
 
@@ -20,10 +32,10 @@ all:	 	${EXEC}
 
 ${OBJS_DIR}/%.o: 	%.cpp $(OBJDIRS) ${INCLUDES} Makefile
 			${MKDIR} $(@D) $(DMPDIR)$(@D)
-			${CPP} ${CPPFLAGS} ${LIBINCLUDES} -c $< -o $@
+			${CPP} ${CPPFLAGS} -I includes -c $< -o $@
 
 ${EXEC}:	${NAME}.cpp ${OBJS}
-			$(CPP) ${CPPFLAGS} ${OBJS} -o ${EXEC}
+			$(CPP) ${CPPFLAGS} ${OBJS} -I includes -o ${EXEC}
 			
 clean:
 			${RM} ${OBJS}

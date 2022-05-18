@@ -1,20 +1,17 @@
 SRCS		=	main.cpp 								\
-				srcs/Animal.cpp 						\
-				srcs/Cat.cpp 							\
-				srcs/Dog.cpp 							\
-				srcs/WrongAnimal.cpp 					\
-				srcs/WrongCat.cpp						\
-
+				srcs/ClapTrap.cpp 						\
+				srcs/ScavTrap.cpp 						\
+				srcs/FragTrap.cpp 						\
+				srcs/DiamondTrap.cpp					\
 
 OBJS		=	$(addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o})
 OBJS_DIR	=	objects
 MKDIR		=	mkdir -p
 
-INCLUDES	=	includes/Animal.hpp 					\
-				includes/Cat.hpp 						\
-				includes/Dog.hpp 						\
-				includes/WrongAnimal.hpp 				\
-				includes/WrongCat.hpp					\
+INCLUDES	=	includes/ClapTrap.hpp 					\
+				includes/ScavTrap.hpp 					\
+				includes/FragTrap.hpp 					\
+				includes/DiamondTrap.hpp				\
 
 CPP			= 	c++ -std=c++98
 
@@ -39,7 +36,7 @@ clean:
 			${RM} ${OBJS}
 
 fclean:		clean
-			${RM} ${EXEC} objects
+			${RM} ${EXEC} objects outfile
 
 re:			fclean all
 

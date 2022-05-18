@@ -15,7 +15,11 @@ class Brain
 
 		Brain &				operator=( Brain const & rhs );
 		const std::string &	getIdea( unsigned int index ) const;
+		void				setIdea( std::string idea, unsigned int position );
+		void				setIdeas( std::string ideas[100] );
+		
 
+	private:
 		std::string	ideas[100];
 
 };

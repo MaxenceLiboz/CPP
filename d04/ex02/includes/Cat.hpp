@@ -3,10 +3,10 @@
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 
 	public:
@@ -19,8 +19,7 @@ class Cat : public Animal
 
 		virtual void	makeSound() const;
 		const Brain*	getBrain() const;
-		void			setBrain( unsigned int index, std::string idea );
-		void			setBrain( std::string ideas[100] );
+		Brain*			getBrain();
 
 	private:
 		Brain* brain;

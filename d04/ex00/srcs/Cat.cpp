@@ -1,19 +1,19 @@
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog() : Animal("Dog")
+Cat::Cat() : Animal("Cat")
 {
-	std::cout << BLU << "Default Dog constructor called" << END << std::endl;
+	std::cout << YEL << "Default Cat constructor called" << END << std::endl;
 
 }
 
-Dog::Dog( const Dog & src )
+Cat::Cat( const Cat & src )
 {
 	*this = src;
-	std::cout << BLU << "Copy Dog constructor called" << END << std::endl;
+	std::cout << YEL << "Copy Cat constructor called" << END << std::endl;
 }
 
 
@@ -21,9 +21,9 @@ Dog::Dog( const Dog & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << CYN << "Dog destructor called" << END << std::endl;
+	std::cout << MAG << "Cat destructor called" << END << std::endl;
 }
 
 
@@ -31,13 +31,13 @@ Dog::~Dog()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog &				Dog::operator=( Dog const & rhs )
+Cat &				Cat::operator=( Cat const & rhs )
 {
-	this->type = rhs.type;
+	this->_type = rhs._type;
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Dog const & i )
+std::ostream &			operator<<( std::ostream & o, Cat const & i )
 {
 	o << i.getType();
 	return o;
@@ -47,9 +47,9 @@ std::ostream &			operator<<( std::ostream & o, Dog const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-void	Dog::makeSound() const
+void	Cat::makeSound() const
 {
-	std::cout << "WOOOAFFF" << std::endl;
+	std::cout << "MEOWWWWW" << std::endl;
 }
 
 /*

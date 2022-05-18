@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:19:20 by mliboz            #+#    #+#             */
-/*   Updated: 2022/04/05 10:57:46 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/17 08:03:49 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,4 @@ int	main(void)
 	std::cout << Max;
 	Max.beRepaired(1);
 	std::cout << Max << std::endl;
-
-	ClapTrap Copy2(Copy);
 }

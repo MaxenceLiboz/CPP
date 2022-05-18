@@ -4,12 +4,12 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : type("Default")
+Animal::Animal() : _type("Default")
 {
 	std::cout << GRN << "Default Animal constructor called" << END << std::endl;
 }
 
-Animal::Animal( std::string type ) : type(type)
+Animal::Animal( std::string type ) : _type(type)
 {
 	std::cout << GRN << "String type Animal constructor called" << END << std::endl;
 }
@@ -37,7 +37,7 @@ Animal::~Animal()
 
 Animal &				Animal::operator=( Animal const & rhs )
 {
-	this->type = rhs.type;
+	this->_type = rhs._type;
 	return *this;
 }
 
@@ -60,7 +60,7 @@ void	Animal::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-const std::string & Animal::getType() const { return (this->type); }
+const std::string & Animal::getType() const { return (this->_type); }
 
 
 /* ************************************************************************** */

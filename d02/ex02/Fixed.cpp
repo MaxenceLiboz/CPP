@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 13:09:32 by mliboz            #+#    #+#             */
-/*   Updated: 2022/04/01 13:09:27 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/17 07:51:35 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,5 +152,16 @@ Fixed & Fixed::operator++(void) {
 Fixed	Fixed::operator++(int) {
 	Fixed	tmp(*this);
 	this->_fixed++;
+	return tmp;
+}
+
+Fixed & Fixed::operator--(void) {
+	this->_fixed--;
+	return *this;
+}
+
+Fixed	Fixed::operator--(int) {
+	Fixed	tmp(*this);
+	this->_fixed--;
 	return tmp;
 }

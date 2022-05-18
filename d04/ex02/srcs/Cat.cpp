@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
 	this->brain = new Brain;
 	std::cout << YEL << "Default Cat constructor called" << END << std::endl;
@@ -35,7 +35,11 @@ Cat::~Cat()
 Cat &				Cat::operator=( Cat const & rhs )
 {
 	this->type = rhs.type;
-	this->brain = rhs.brain;
+	if (this->brain == NULL)
+		this->brain = new Brain();
+		// std::cout << MAG << "Not null" << END << std::endl;	
+	for (int i = 0; i < 100; i++)
+		this->brain->setIdea(rhs.getBrain()->getIdea(i), i);
 	return *this;
 }
 
@@ -59,16 +63,6 @@ void	Cat::makeSound() const
 */
 
 const Brain*	Cat::getBrain() const { return (this->brain); }
-
-void			Cat::setBrain( unsigned int index, std::string idea)
-{
-	this->brain->ideas[index] = idea;
-}
-
-void			Cat::setBrain( std::string ideas[100])
-{
-	for (int i = 0; i < 100; i++)
-		this->brain->ideas[i] = ideas[i];
-}
+Brain*			Cat::getBrain() { return (this->brain); }
 
 /* ************************************************************************** */

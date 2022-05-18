@@ -11,7 +11,7 @@ CPPFLAGS	= 	-Wall -Wextra -Werror
 
 NAME		=	main
 
-EXEC		= 	scavTrap
+EXEC		= 	fragTrap
 
 RM			=	rm -rf	
 

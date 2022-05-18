@@ -6,8 +6,8 @@
 
 Cat::Cat() : Animal("Cat")
 {
+	this->brain = new Brain;
 	std::cout << YEL << "Default Cat constructor called" << END << std::endl;
-
 }
 
 Cat::Cat( const Cat & src )
@@ -23,6 +23,7 @@ Cat::Cat( const Cat & src )
 
 Cat::~Cat()
 {
+	delete this->brain;
 	std::cout << MAG << "Cat destructor called" << END << std::endl;
 }
 
@@ -34,6 +35,11 @@ Cat::~Cat()
 Cat &				Cat::operator=( Cat const & rhs )
 {
 	this->type = rhs.type;
+	if (this->brain == NULL)
+		this->brain = new Brain();
+		// std::cout << MAG << "Not null" << END << std::endl;	
+	for (int i = 0; i < 100; i++)
+		this->brain->setIdea(rhs.getBrain()->getIdea(i), i);
 	return *this;
 }
 
@@ -56,5 +62,7 @@ void	Cat::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+const Brain*	Cat::getBrain() const { return (this->brain); }
+Brain*			Cat::getBrain() { return (this->brain); }
 
 /* ************************************************************************** */

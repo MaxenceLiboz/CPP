@@ -6,17 +6,17 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	this->_hitPoint = 100;
-	this->_energyPoint = 50;
-	this->_attackDamage = 20;
+	this->_hitPoint = this->setHitPoint();
+	this->_energyPoint = this->setEnergyPoint();
+	this->_attackDamage = this->setAttackDamage();
 	std::cout << BLUE << "ScavTrap default constructor called" << END << std::endl;
 }
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
-	this->_hitPoint = 100;
-	this->_energyPoint = 50;
-	this->_attackDamage = 20;
+	this->_hitPoint = this->setHitPoint();
+	this->_energyPoint = this->setEnergyPoint();
+	this->_attackDamage = this->setAttackDamage();
 	std::cout << BLUE << "ScavTrap copy constructor called" << END << std::endl;
 }
 
@@ -79,6 +79,10 @@ void	ScavTrap::attack( const std::string & target )
 		this->_energyPoint -= 1;
 	}
 }
+
+unsigned int	ScavTrap::setHitPoint() { return(100); }
+unsigned int	ScavTrap::setEnergyPoint() { return(50); }
+unsigned int	ScavTrap::setAttackDamage() { return(20); }
 
 
 /*

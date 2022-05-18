@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 14:58:40 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/18 15:36:19 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/18 15:42:36 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	unsigned int size = std::atoi(argv[1]);	
 	if (size >= 2 && size <= 200)
 	{
-		Animal *animal[size];
+		AAnimal *animal[size];
 		for (unsigned int i = 0; i < size / 2; i++)
 			animal[i] = new Dog();
 		for (unsigned int i = size / 2; i < size; i++)
