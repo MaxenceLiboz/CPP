@@ -13,7 +13,7 @@ class Cat : public Animal
 
 		Cat();
 		Cat( Cat const & src );
-		virtual ~Cat();
+		~Cat();
 
 		Cat &		operator=( Cat const & rhs );
 

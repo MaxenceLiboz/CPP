@@ -13,7 +13,7 @@ class Dog : public AAnimal
 
 		Dog();
 		Dog( Dog const & src );
-		virtual ~Dog();
+		~Dog();
 
 		Dog &		operator=( Dog const & rhs );
 
