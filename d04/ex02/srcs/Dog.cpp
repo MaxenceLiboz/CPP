@@ -36,7 +36,10 @@ Dog::~Dog()
 Dog &				Dog::operator=( Dog const & rhs )
 {
 	this->type = rhs.type;
-	this->brain = rhs.brain;
+	if (this->brain == NULL)
+		this->brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->brain->setIdea(rhs.getBrain()->getIdea(i), i);
 	return *this;
 }
 
@@ -59,5 +62,7 @@ void	Dog::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+const Brain*	Dog::getBrain() const { return (this->brain); }
+Brain*			Dog::getBrain() { return (this->brain); }
 
 /* ************************************************************************** */

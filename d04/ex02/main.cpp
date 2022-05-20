@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 14:58:40 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/18 15:42:36 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/20 11:27:40 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main(int argc, char **argv)
 		return (0);
 	}
 	unsigned int size = std::atoi(argv[1]);	
+	// (void)argv;
+	// unsigned int size = 10;
 	if (size >= 2 && size <= 200)
 	{
 		AAnimal *animal[size];
