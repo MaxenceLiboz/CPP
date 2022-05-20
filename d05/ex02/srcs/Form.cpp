@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 10:33:09 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/19 16:07:37 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/20 08:47:24 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,14 @@ void	Form::beSigned( Bureaucrat & src)
 		throw(Form::GradeToLowException());
 }
 
+void	Form::execute( Bureaucrat const & executor ) const
+{
+	if (this->getSigned() == false)
+		throw (Form::FormNotSignedException());
+	if (executor.getGrade() > this->getExecGrade())
+		throw (Form::GradeToLowException());
+}
+
 const char* Form::GradeToLowException::what() const throw()
 {
 	return ("\033[1;31mFormException: Grade to low\e[0m");
@@ -76,4 +84,14 @@ const char* Form::GradeToLowException::what() const throw()
 const char* Form::GradeToHighException::what() const throw()
 {
 	return ("\033[1;31mFormException: Grade to high\e[0m");
+}
+
+const char* Form::FormNotSignedException::what() const throw()
+{
+	return ("\033[1;31mFormException: form not signed yet.\e[0m");
+}
+
+const char* Form::FormAlreadySignedException::what() const throw()
+{
+	return ("\033[1;31mFormException: form already signed.\e[0m");
 }

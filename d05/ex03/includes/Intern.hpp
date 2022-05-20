@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 15:28:27 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/19 15:56:10 by mliboz           ###   ########.fr       */
+/*   Created: 2022/05/20 08:58:47 by mliboz            #+#    #+#             */
+/*   Updated: 2022/05/20 11:02:25 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 #include "Form.hpp"
 
-
-class RobotomyRequestForm : public Form
+class Intern
 {
 	public:
-	
-		RobotomyRequestForm( RobotomyRequestForm const & src );
-		RobotomyRequestForm( std::string target );
-		~RobotomyRequestForm();
+		Intern(void);
+		Intern(Intern const & var);
+		~Intern();
 
-		RobotomyRequestForm & operator=( RobotomyRequestForm const & src);
+		Intern & operator=(Intern const & var);
 
-		
-		void	execute( Bureaucrat const & exectuor ) const;
+		Form *	makeForm( std::string name, std::string target );
+		int		getIndex( std::string name );
+
 	private:
-		/* data */
-		RobotomyRequestForm();
-		const std::string 			_target;
+		static const std::string _forms[3];
 };
+
+std::ostream & operator<<(std::ostream & o, Intern const & var);

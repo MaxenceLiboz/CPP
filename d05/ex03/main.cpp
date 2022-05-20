@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 08:35:55 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/20 09:00:51 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/20 11:11:14by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,25 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "main.hpp"
+#include "Intern.hpp"
 
 int	main( void )
 {
+	Intern intern;
+	Form *form;
+	Form *form1;
+	Form *form2;
+	Form *form3;
+	form = intern.makeForm("Robotomy request", "MAX");
+	form1 = intern.makeForm("robot", "MAX1");
+	form2 = intern.makeForm("Presidential pardon", "MAX2");
+	form3 = intern.makeForm("Shrubbery creation", "MAX3");
+	Bureaucrat aled("ALED", 10);
 
-	ShrubberyCreationForm form("NCP");
-	Bureaucrat bur("ALED", 145);
-	bur.signForm(form);
-	bur.executeForm(form);
-	std::cout << form;	
 	try
 	{
-		ShrubberyCreationForm test("target");
-		RobotomyRequestForm test1("target1");
-		PresidentialPardonForm test2("target2");
-		Bureaucrat bur("bur", 10);
-
-		bur.signForm(test);			
-		test.execute( bur );
-		bur.signForm(test1);			
-		test1.execute( bur );
-		bur.signForm(test2);			
-		test2.execute( bur );
+		aled.signForm(*form);
+		aled.executeForm(*form);
 	}
 	catch(const Form::GradeToHighException & e)
 	{
@@ -59,17 +56,9 @@ int	main( void )
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
-	try
-	{
-		ShrubberyCreationForm test("target1");
-		Bureaucrat bur("bur", 145);
-
-		bur.signForm(test);			
-		test.execute( bur );
-	}
-	catch(const Form::GradeToLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	
+	delete form;
+	delete form1;
+	delete form2;
+	delete form3;
 }

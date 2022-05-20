@@ -6,11 +6,11 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 10:33:09 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/20 08:40:25 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/20 10:40:31 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "Form.hpp"
 
 Form::Form() : _name("Form"), _signGrade(140), _execGrade(150)
 {
@@ -56,6 +56,7 @@ std::ostream &	operator<<( std::ostream & o, Form const & src)
 }
 
 const std::string 	Form::getName() const { return(this->_name); }
+const std::string 	Form::getTarget	() const { return(this->_target); }
 int					Form::getSignGrade() const { return(this->_signGrade); }
 int					Form::getExecGrade() const { return(this->_execGrade); }
 bool				Form::getSigned() const { return(this->_signed); }
@@ -68,6 +69,14 @@ void	Form::beSigned( Bureaucrat & src)
 		throw(Form::GradeToLowException());
 }
 
+void	Form::execute( Bureaucrat const & executor ) const
+{
+	if (this->getSigned() == false)
+		throw (Form::FormNotSignedException());
+	if (executor.getGrade() > this->getExecGrade())
+		throw (Form::GradeToLowException());
+}
+
 const char* Form::GradeToLowException::what() const throw()
 {
 	return ("\033[1;31mFormException: Grade to low\e[0m");
@@ -76,4 +85,14 @@ const char* Form::GradeToLowException::what() const throw()
 const char* Form::GradeToHighException::what() const throw()
 {
 	return ("\033[1;31mFormException: Grade to high\e[0m");
+}
+
+const char* Form::FormNotSignedException::what() const throw()
+{
+	return ("\033[1;31mFormException: form not signed yet.\e[0m");
+}
+
+const char* Form::FormAlreadySignedException::what() const throw()
+{
+	return ("\033[1;31mFormException: form already signed.\e[0m");
 }
