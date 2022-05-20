@@ -13,6 +13,7 @@ Dog::Dog() : AAnimal("Dog")
 
 Dog::Dog( const Dog & src )
 {
+	this->brain = new Brain();
 	*this = src;
 	std::cout << BLU << "Copy Dog constructor called" << END << std::endl;
 }
@@ -36,8 +37,6 @@ Dog::~Dog()
 Dog &				Dog::operator=( Dog const & rhs )
 {
 	this->type = rhs.type;
-	if (this->brain == NULL)
-		this->brain = new Brain();
 	for (int i = 0; i < 100; i++)
 		this->brain->setIdea(rhs.getBrain()->getIdea(i), i);
 	return *this;

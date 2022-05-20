@@ -12,6 +12,7 @@ Cat::Cat() : AAnimal("Cat")
 
 Cat::Cat( const Cat & src )
 {
+	this->brain = new Brain();
 	*this = src;
 	std::cout << YEL << "Copy Cat constructor called" << END << std::endl;
 }
@@ -35,9 +36,6 @@ Cat::~Cat()
 Cat &				Cat::operator=( Cat const & rhs )
 {
 	this->type = rhs.type;
-	if (this->brain == NULL)
-		this->brain = new Brain();
-		// std::cout << MAG << "Not null" << END << std::endl;	
 	for (int i = 0; i < 100; i++)
 		this->brain->setIdea(rhs.getBrain()->getIdea(i), i);
 	return *this;
