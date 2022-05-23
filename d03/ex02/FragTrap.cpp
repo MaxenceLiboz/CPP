@@ -61,7 +61,8 @@ std::ostream &			operator<<( std::ostream & o, FragTrap const & i )
 
 void	FragTrap::highFiveGuys() const
 {
-	std::cout << "FragTrap " << this->_name << " is asking everyone to high five !" << std::endl;
+	if (this->_hitPoint > 0)
+		std::cout << "FragTrap " << this->_name << " is asking everyone to high five !" << std::endl;
 }
 
 /*

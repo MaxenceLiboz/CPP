@@ -17,7 +17,7 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 	this->_hitPoint = 100;
 	this->_energyPoint = 50;
 	this->_attackDamage = 20;
-	std::cout << BLUE << "ScavTrap copy constructor called" << END << std::endl;
+	std::cout << BLUE << "ScavTrap string constructor called" << END << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap & src )
@@ -66,7 +66,8 @@ std::ostream &			operator<<( std::ostream & o, ScavTrap const & i )
 
 void	ScavTrap::guardGate() const
 {
-	std::cout << "ScavTrap " << this->getName() << " entered in gate keeper mode !" << std::endl;
+	if (this->_hitPoint > 0)
+		std::cout << "ScavTrap " << this->getName() << " entered in gate keeper mode !" << std::endl;
 }
 
 void	ScavTrap::attack( const std::string & target )

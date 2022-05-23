@@ -57,6 +57,22 @@ std::ostream &			operator<<( std::ostream & o, ClapTrap const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	ClapTrap::takeDamage( unsigned int amount )
+{
+	if (amount > 0 && this->_hitPoint - amount >= 0)
+	{
+		if (this->_hitPoint - amount <= this->_hitPoint)
+			amount = this->_hitPoint;
+		std::cout << this->getName() << " is taking " << amount << " damages." << std::endl;
+		this->_hitPoint -= amount;
+	}
+	else
+	{
+		std::cout << "Enter a positive amount, if " << this->_name << " already has 0 hits points";
+		std::cout << " he/she can't take damage anymore" << std::endl;
+	}
+}
+
 void	ClapTrap::attack( const std::string & target)
 {
 	if (this->getHitPoint() > 0 && this->getEnergyPoint() > 0)
@@ -81,20 +97,6 @@ void	ClapTrap::beRepaired( unsigned int amount )
 		std::cout << this->_name << " can't repair." << std::endl;
 }
 
-void	ClapTrap::takeDamage( unsigned int amount )
-{
-	if (amount >= 0 && this->_hitPoint - amount >= 0 && this->_hitPoint - amount <= this->_hitPoint)
-	{
-		std::cout << this->getName() << " is taking " << amount << " damages." << std::endl;
-		this->_hitPoint -= amount;
-	}
-	else
-	{
-		std::cout << "Enter a positive amount, if " << this->_name << " already has 0 hits points";
-		std::cout << " he/she can't take damage anymore" << std::endl;
-	}
-}
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
@@ -102,29 +104,5 @@ std::string		ClapTrap::getName() const { return (this->_name); }
 unsigned int	ClapTrap::getHitPoint() const { return (this->_hitPoint); }
 unsigned int	ClapTrap::getEnergyPoint() const { return (this->_energyPoint); }
 unsigned int	ClapTrap::getAttackDamage() const { return (this->_attackDamage); }
-
-// void			ClapTrap::setName( std::string name )
-// {
-// 	this->_name = name;
-// }
-
-// void			ClapTrap::setHitPoint( unsigned int amount )
-// {
-// 	if (amount > 0)
-// 		this->_hitPoint = amount;
-// }
-
-// void			ClapTrap::setEnergyPoint( unsigned int amount )
-// {
-// 	if (amount > 0)
-// 		this->_energyPoint = amount;
-// }
-
-// void			ClapTrap::setAttackDamage( unsigned int amount )
-// {
-// 	if (amount > 0)
-// 		this->_attackDamage = amount;
-// }
-
 
 /* ************************************************************************** */

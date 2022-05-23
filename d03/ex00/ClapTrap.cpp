@@ -2,7 +2,7 @@
 #include "ClapTrap.hpp"
 
 /*
-** ------------------------------- CONSTRUCTOR --------------------------------
+* ------------------------------- CONSTRUCTOR --------------------------------
 */
 
 ClapTrap::ClapTrap() : _name("Default"), _hitPoint(10), _energyPoint(10), _attackDamage(0)
@@ -10,7 +10,7 @@ ClapTrap::ClapTrap() : _name("Default"), _hitPoint(10), _energyPoint(10), _attac
 	std::cout << GREEN << "Default constructor called" << END << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(10)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
 	std::cout << GREEN << "String constructor called" << END << std::endl;
 }
@@ -83,8 +83,10 @@ void	ClapTrap::beRepaired( unsigned int amount )
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	if (amount > 0 && this->_hitPoint - amount >= 0 && this->_hitPoint - amount <= this->_hitPoint)
+	if (amount > 0 && this->_hitPoint - amount >= 0)
 	{
+		if (this->_hitPoint - amount <= this->_hitPoint)
+			amount = this->_hitPoint;
 		std::cout << this->getName() << " is taking " << amount << " damages." << std::endl;
 		this->_hitPoint -= amount;
 	}
