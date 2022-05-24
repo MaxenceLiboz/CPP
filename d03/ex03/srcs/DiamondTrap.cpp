@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 08:59:43 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/18 14:55:12 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/24 14:57:58 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,11 @@ DiamondTrap &	DiamondTrap::operator=( DiamondTrap const & rhs )
 
 void	DiamondTrap::whoAmI() const
 {
-	std::cout << "Hello my DiamonTrap name is " << this->_name;
-	std::cout << " and my ClapTrap name is " << ClapTrap::getName() << std::endl;
+	if (this->_hitPoint > 0)
+	{
+		std::cout << "Hello my DiamonTrap name is " << this->_name;
+		std::cout << " and my ClapTrap name is " << ClapTrap::getName() << std::endl;
+	}
 }
 
 std::ostream	&	operator<<( std::ostream & o, DiamondTrap const & rhs )

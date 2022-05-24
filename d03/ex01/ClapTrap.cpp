@@ -59,9 +59,9 @@ std::ostream &			operator<<( std::ostream & o, ClapTrap const & i )
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	if (amount > 0 && this->_hitPoint - amount >= 0)
+	if (amount > 0 && this->_hitPoint > 0)
 	{
-		if (this->_hitPoint - amount <= this->_hitPoint)
+		if (this->_hitPoint - amount <= 0)
 			amount = this->_hitPoint;
 		std::cout << this->getName() << " is taking " << amount << " damages." << std::endl;
 		this->_hitPoint -= amount;
@@ -87,7 +87,7 @@ void	ClapTrap::attack( const std::string & target)
 
 void	ClapTrap::beRepaired( unsigned int amount )
 {
-	if (this->getHitPoint() > 0 && this->getEnergyPoint() > 0 && amount >= 0)
+	if (this->getHitPoint() > 0 && this->getEnergyPoint() > 0 && amount > 0)
 	{
 		std::cout << this->getName() << " is repairing " << amount << " hit points." << std::endl;
 		this->_hitPoint += amount;
