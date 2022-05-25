@@ -6,10 +6,15 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:13:10 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/25 10:14:07 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/25 13:20:24 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef B_HPP
+#define B_HPP
+
 #include "main.hpp"
 
-class B {};
+class B : public Base {};
+
+#endif

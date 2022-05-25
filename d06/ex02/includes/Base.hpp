@@ -6,9 +6,12 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:11:13 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/25 10:12:01 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/25 13:21:07 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef BASE_HPP
+#define BASE_HPP
 
 #include "main.hpp"
 
@@ -17,3 +20,5 @@ class Base
 	public:
 		virtual ~Base();
 };
+
+#endif

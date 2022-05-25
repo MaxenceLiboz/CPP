@@ -6,14 +6,15 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:08:14 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/25 10:27:31 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/25 13:21:23 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MAIN_HPP
+#define MAIN_HPP
 
 #include <iostream>
 #include <string>
+#include "Base.hpp"
 
 #endif
