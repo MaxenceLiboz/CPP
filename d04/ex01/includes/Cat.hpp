@@ -22,7 +22,7 @@ class Cat : public Animal
 		Brain*			getBrain();
 
 	private:
-		Brain* brain;
+		Brain* _brain;
 
 };
 

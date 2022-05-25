@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 14:22:33 by maxencelibo       #+#    #+#             */
-/*   Updated: 2022/05/18 15:48:14 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/25 09:41:09 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AAnimal::AAnimal() : type("Default")
+AAnimal::AAnimal() : _type("Default")
 {
 	std::cout << GRN << "Default Animal constructor called" << END << std::endl;
 }
 
-AAnimal::AAnimal( std::string type ) : type(type)
+AAnimal::AAnimal( std::string type ) : _type(type)
 {
 	std::cout << GRN << "String type Animal constructor called" << END << std::endl;
 }
@@ -50,7 +50,7 @@ AAnimal::~AAnimal()
 
 AAnimal &				AAnimal::operator=( AAnimal const & rhs )
 {
-	this->type = rhs.type;
+	this->_type = rhs._type;
 	return *this;
 }
 
@@ -73,6 +73,6 @@ void	AAnimal::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-const std::string & AAnimal::getType() const { return (this->type); }
+const std::string & AAnimal::getType() const { return (this->_type); }
 
 /* ************************************************************************** */

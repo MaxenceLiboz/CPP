@@ -24,7 +24,7 @@ CPPFLAGS	= 	-Wall -Wextra -Werror
 
 NAME		=	main
 
-EXEC		= 	poly
+EXEC		= 	exec
 
 RM			=	rm -rf	
 

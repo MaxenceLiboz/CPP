@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 14:58:40 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/18 15:36:19 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/05/25 09:37:10 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,18 @@ int main(int argc, char **argv)
 
 		Cat *cat1 = new Cat();
 		for (int i = 0; i < 100; i++)
-		{
 			cat1->getBrain()->setIdea("Aled" + std::to_string(i), i);
+		for (int i = 0; i < 5; i++)
 			std::cout << cat1->getBrain()->getIdea(i) << std::endl;
-		}
 		Cat *cat2 = new Cat(*cat1);
 		Cat cat3;
 		cat3 = *cat1;
+		(void)cat2;
+		(void)cat3;
 		delete cat1;
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 5; i++)
 			std::cout << cat2->getBrain()->getIdea(i) << std::endl;
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 5; i++)
 			std::cout << cat3.getBrain()->getIdea(i) << std::endl;
 		delete cat2;
 	}

@@ -34,7 +34,7 @@ Brain::~Brain()
 Brain &				Brain::operator=( Brain const & rhs )
 {
 	for (int i = 0; i < 100; i++)
-		this->ideas[i].assign(rhs.ideas[i]);
+		this->_ideas[i].assign(rhs._ideas[i]);
 	return *this;
 }
 
@@ -51,12 +51,12 @@ std::ostream &			operator<<( std::ostream & o, Brain const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-const std::string & Brain::getIdea( unsigned int index) const { return (this->ideas[index]); }
+const std::string & Brain::getIdea( unsigned int index) const { return (this->_ideas[index]); }
 
 void	Brain::setIdea( std::string idea, unsigned int position )
 {
 	if (position < 100)
-		this->ideas[position] = idea;
+		this->_ideas[position] = idea;
 	else
 		std::cout << "Position over 100" << std::endl;
 }
@@ -64,7 +64,7 @@ void	Brain::setIdea( std::string idea, unsigned int position )
 void	Brain::setIdeas( std::string ideas[100])
 {
 	for (int i = 0; i < 100; i++)
-		this->ideas[i] = ideas[i];
+		this->_ideas[i] = ideas[i];
 }
 
 /*

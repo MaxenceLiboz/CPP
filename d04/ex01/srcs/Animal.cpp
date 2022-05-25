@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maxenceliboz <maxenceliboz@student.42.f    +#+  +:+       +#+        */
+/*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 14:22:33 by maxencelibo       #+#    #+#             */
-/*   Updated: 2022/04/08 14:23:49 by maxencelibo      ###   ########.fr       */
+/*   Updated: 2022/05/25 09:29:22 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : type("Default")
+Animal::Animal() : _type("Default")
 {
 	std::cout << GRN << "Default Animal constructor called" << END << std::endl;
 }
 
-Animal::Animal( std::string type ) : type(type)
+Animal::Animal( std::string type ) : _type(type)
 {
 	std::cout << GRN << "String type Animal constructor called" << END << std::endl;
 }
@@ -50,7 +50,7 @@ Animal::~Animal()
 
 Animal &				Animal::operator=( Animal const & rhs )
 {
-	this->type = rhs.type;
+	this->_type = rhs._type;
 	return *this;
 }
 
@@ -73,6 +73,6 @@ void	Animal::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-const std::string & Animal::getType() const { return (this->type); }
+const std::string & Animal::getType() const { return (this->_type); }
 
 /* ************************************************************************** */

@@ -22,7 +22,7 @@ class Dog : public AAnimal
 		Brain*			getBrain();
 
 	private:
-		Brain* brain;
+		Brain* _brain;
 
 };
 

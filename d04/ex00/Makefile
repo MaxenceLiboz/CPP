@@ -22,7 +22,7 @@ CPPFLAGS	= 	-Wall -Wextra -Werror
 
 NAME		=	main
 
-EXEC		= 	diamondTrap
+EXEC		= 	exec
 
 RM			=	rm -rf	
 
