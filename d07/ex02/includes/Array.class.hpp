@@ -31,27 +31,48 @@ class Array
 			}
 		}
 
-		Array( Array<T> const & var )
+		Array( Array<T> & var )
 		{
-			this->_array = new T[var.length()];
+			this->_array = new T[var.size()];
 			*this = var;
 		}
 
 		~Array() { delete [] this->_array; }
 
-		Array<T> & operator=( Array<T> const & var )
+		Array<T> & operator=( Array<T> & var )
 		{
-			for (unsigned int i = 0; i < var.length() - 1; i++)
+			for (unsigned int i = 0; i < var.size() - 1; i++)
 			{
 				this->_array[i] = var[i];
 			}
-			this->_size = var.length();
+			this->_size = var.size();
 			return (*this);
 		}
 		
-		T & operator[](int index) const { return *(this->_array + index); }
+		T operator[](unsigned int index) const
+		{
+			if (index >= this->size())
+				throw (Array<T>::IndexOutOfBoundsException());
+			return (this->_array[index]);
+		}
+		
+		T & operator[](unsigned int index)
+		{
+			if (index >= this->size())
+				throw (Array<T>::IndexOutOfBoundsException());
+			return *(this->_array + index);
+		}
 
-		unsigned int	length() const { return (this->_size); }	
+		unsigned int	size() const { return (this->_size); }
+
+		class IndexOutOfBoundsException : public std::exception
+		{
+			public:
+				virtual const char * what() const throw ()
+				{
+					return ("\033[1;31mIndex out of bounds\e[0m");
+				}
+		};
 	private:
 		
 		T			*_array;
@@ -59,14 +80,14 @@ class Array
 };
 
 template<typename T>
-std::ostream & operator<<(std::ostream & o, Array<T> & var)
+std::ostream & operator<<(std::ostream & o, Array<T> const & var)
 {
 	o << "List: [ ";
-	for (unsigned int i = 0; i < var.length() - 2; i++)
+	for (unsigned int i = 0; i < var.size() - 2; i++)
 	{
 		o << var[i] << ", "; 
 	}	
-	o << var[var.length() - 1] << " ]" << std::endl;
+	o << var[var.size() - 1] << " ]" << std::endl;
 	return (o);
 }
 
