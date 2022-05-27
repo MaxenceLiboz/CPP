@@ -13,10 +13,13 @@
 
 #include "main.hpp"
 
-void	printElem_int(int const v1) { std::cout << v1 << ", "; }
-void	printElem_char(char const v1) { std::cout << v1 << ", "; }
-void	printElem_float(float const v1) { std::cout << v1 << ", "; }
+void	printElem_int(int const v1) { std::cout << v1 << std::endl; }
+void	printElem_char(char const v1) { std::cout << v1 << std::endl; }
+void	printElem_float(float const v1) { std::cout << v1 << std::endl; }
 
+
+// While using template function, be carfull it need to be explicit deduction as
+// the implicit one won't work => call NonDecuced context;
 int main()
 {
 	int		itable[4] = {1, 4, 2, 1};

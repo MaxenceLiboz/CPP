@@ -26,7 +26,7 @@ void	iter(T table, int  size, F function)
 template<typename T>
 void	printElem(T const v1)
 {
-	std::cout << v1 << ", ";
+	std::cout << v1 << std::endl;
 }
 
 #endif
