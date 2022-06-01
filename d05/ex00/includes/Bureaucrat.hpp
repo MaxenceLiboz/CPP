@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 08:09:59 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/19 11:25:37 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/06/01 11:30:26 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class Bureaucrat
 {
 	public:
 	
-		Bureaucrat();
 		Bureaucrat( Bureaucrat const & src );
 		Bureaucrat( std::string name, int grade );
 		~Bureaucrat();
@@ -65,6 +64,7 @@ class Bureaucrat
 	
 	private:
 
+		Bureaucrat();
 		const	std::string _name;
 		int		_grade;
 
