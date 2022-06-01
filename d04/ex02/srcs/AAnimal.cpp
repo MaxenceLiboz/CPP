@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 14:22:33 by maxencelibo       #+#    #+#             */
-/*   Updated: 2022/05/25 09:41:09 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/06/01 08:48:41 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,6 @@ std::ostream &			operator<<( std::ostream & o, AAnimal const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-void	AAnimal::makeSound() const
-{
-	std::cout << "Animal sound" << std::endl;
-}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
