@@ -46,6 +46,11 @@ std::ostream &	operator<<( std::ostream & o, Intern const & src)
 	return o;
 }
 
+Form *	Intern::createRobotomyRequest(std::string target){ return (new RobotomyRequestForm(target));}
+Form *	Intern::createPresidentialPardon(std::string target){ return (new PresidentialPardonForm(target));}
+Form *	Intern::createShrubberyCreation(std::string target){ return (new ShrubberyCreationForm(target));}
+
+
 int		Intern::getIndex( std::string name )
 {
 	for (int i = 0; i < 3; i++)
@@ -58,23 +63,15 @@ int		Intern::getIndex( std::string name )
 
 Form *	Intern::makeForm( std::string name, std::string target)
 {
+	Form *  (Intern::*f[3])(std::string target) = {&Intern::createRobotomyRequest, &Intern::createPresidentialPardon, &Intern::createShrubberyCreation};
 	int index = this->getIndex(name);
 	if (index == -1)
-	{
-		std::cout << "Intern couldn't create " << name << std::endl;
-		return (NULL);
-	}
+		throw(Intern::FormUnknownException());
 	std::cout << "Intern creates " << name << std::endl;
-	switch (index)
-	{
-	case 0:
-		return (new RobotomyRequestForm(target));
-	case 1:
-		return (new PresidentialPardonForm(target));
-	case 2:
-		return (new ShrubberyCreationForm(target));
-	default:
-		break;
-	}
-	return (NULL);
+	return ((this->*f[index])(target));	
+}
+
+const char * Intern::FormUnknownException::what() const throw()
+{
+	return ("\033[1;31mInternException: Intern don't know the form you want to create.\e[0m");
 }

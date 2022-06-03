@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 15:28:27 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/20 08:48:05 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/06/03 10:43:54 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm & operator=( ShrubberyCreationForm const & src);
 
 		void	execute( Bureaucrat const & exectuor ) const;
-		class OpenAndCreateFileException : std::exception
+		class OpenAndCreateFileException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();

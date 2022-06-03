@@ -25,38 +25,32 @@ int	main( void )
 	Form *form1;
 	Form *form2;
 	Form *form3;
-	form = intern.makeForm("Robotomy request", "MAX");
-	form1 = intern.makeForm("robot", "MAX1");
-	form2 = intern.makeForm("Presidential pardon", "MAX2");
-	form3 = intern.makeForm("Shrubbery creation", "MAX3");
 	Bureaucrat aled("ALED", 10);
 
 	try
 	{
+		form = intern.makeForm("Robotomy request", "MAX");
+		form2 = intern.makeForm("Presidential pardon", "MAX2");
+		form3 = intern.makeForm("Shrubbery creation", "MAX3");
 		aled.signForm(*form);
+		aled.signForm(*form2);
+		aled.signForm(*form3);
 		aled.executeForm(*form);
+		aled.executeForm(*form2);
+		aled.executeForm(*form3);
 	}
-	catch(const Form::GradeToHighException & e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch(const Form::GradeToLowException & e)
+	try
+	{
+		form1 = intern.makeForm("robot", "MAX1");
+	}
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch(const Form::FormAlreadySignedException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(const Form::FormNotSignedException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(const ShrubberyCreationForm::OpenAndCreateFileException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	
 	delete form;
 	delete form1;
 	delete form2;

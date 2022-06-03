@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 08:58:47 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/20 11:02:25 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/06/03 10:28:32by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,16 @@ class Intern
 
 		Form *	makeForm( std::string name, std::string target );
 		int		getIndex( std::string name );
+
+		Form *	createRobotomyRequest(std::string target);
+		Form *	createPresidentialPardon(std::string target);
+		Form *	createShrubberyCreation(std::string target);
+
+		class FormUnknownException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 
 	private:
 		static const std::string _forms[3];

@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 08:35:55 by mliboz            #+#    #+#             */
-/*   Updated: 2022/06/01 11:30:41 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/06/02 14:36:38 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main( void )
 {
-	Bureaucrat *bur1 = new Bureaucrat();
+	Bureaucrat *bur1 = new Bureaucrat("James", 150);
 	try
 	{	
 		std::cout << *bur1;
@@ -26,37 +26,26 @@ int	main( void )
 		std::cout << *bur1;
 		delete bur1;
 	}
-	catch(const Bureaucrat::GradeToHighException & e)
+	catch(const std::exception & e)
 	{
 		delete bur1;
 		std::cerr << e.what() << std::endl;
 	}
-	catch(const Bureaucrat::GradeToLowException & e)
-	{
-		delete bur1;
-		std::cerr << e.what() << std::endl;
-	}
-	
 	try
 	{
 		Bureaucrat bur2( "bur2", -100);
 		
 		std::cout << bur2;
 	}
-	catch(const Bureaucrat::GradeToHighException & e)
+	catch(std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch(const Bureaucrat::GradeToLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
 	try
 	{
 		Bureaucrat bur3( "bur3", 10);
 		
-		for (int i = 0; i < 9; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			bur3.incrementGrade();
 			std::cout << bur3;

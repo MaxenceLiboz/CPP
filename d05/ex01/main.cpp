@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 08:35:55 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/19 14:10:55 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/06/02 14:39:41 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,62 +35,34 @@ int	main( void )
 		
 		Form form2("BP", 151, 10);
 	}
-	catch(const Form::GradeToHighException & e)
+	catch(const std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch(const Form::GradeToLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(const Bureaucrat::GradeToLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(const Bureaucrat::GradeToHighException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
 	try
 	{
 		Form form2("BP", 15, 1000);
 	}
-	catch(const Form::GradeToHighException & e)
+	catch(const std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch(const Form::GradeToLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
 	try
 	{
 		Form form2("BP", -15, 10);
 	}
-	catch(const Form::GradeToHighException & e)
+	catch(const std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch(const Form::GradeToLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
 	try
 	{
 		Form form2("BP", 15, -10);
 	}
-	catch(const Form::GradeToHighException & e)
+	catch(const std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch(const Form::GradeToLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
 	try
 	{
 		Form form("BP", 15, 10);
@@ -98,19 +70,7 @@ int	main( void )
 
 		form.beSigned(bur);
 	}
-	catch(const Form::GradeToHighException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(const Form::GradeToLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(const Bureaucrat::GradeToHighException & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(const Bureaucrat::GradeToLowException & e)
+	catch(const std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
