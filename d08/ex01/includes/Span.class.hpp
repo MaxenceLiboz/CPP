@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 13:50:39 by mliboz            #+#    #+#             */
-/*   Updated: 2022/06/01 11:38:54 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/06/08 13:10:29 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Span
 
 		void			addNumber( int number );
 		void			addRandomNumbers( unsigned int size );
+		void			addNumbers( std::vector<int>::iterator begin, std::vector<int>::iterator end);
 		unsigned int	shortestSpan() const;
 		unsigned int	longestSpan() const;
 
@@ -38,8 +39,6 @@ class Span
 
 		std::vector<int>	_table;
 		std::vector<int>	_sortedTable;
-		unsigned int		_size;
-		unsigned int		_maxSize;
 	
 };
 

@@ -8,8 +8,6 @@ MKDIR		=	mkdir -p
 
 INCLUDES	=	includes/Span.class.hpp						\
 
-INCLUDESDIR	=	classes/Span/
-
 CPP			= 	c++ -std=c++98
 
 CPPFLAGS	= 	-Wall -Wextra -Werror
