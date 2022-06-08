@@ -5,7 +5,7 @@ OBJS_DIR	=	objects
 MKDIR		=	mkdir -p
 
 INCLUDES	=	includes/main.hpp							\
-				includes/Array.class.hpp					\
+				includes/Array.hpp							\
 
 CPP			= 	c++ -std=c++98
 

@@ -6,12 +6,12 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:15:57 by mliboz            #+#    #+#             */
-/*   Updated: 2022/05/27 09:13:31 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/06/08 16:42:12 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
-#include "Array.class.hpp"
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -25,11 +25,7 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
+	std::cout << "Testing if numbers and mirror saved the same values: " << std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -38,8 +34,10 @@ int main(int, char**)
             return 1;
         }
     }
+	std::cout << "Numbers and mirror saved the same values!" << std::endl;
     try
     {
+		std::cout << "Trying to access with invalid index: " << std::endl;
         numbers[-2] = 0;
     }
     catch(const std::exception& e)
@@ -48,17 +46,20 @@ int main(int, char**)
     }
     try
     {
+		std::cout << "Trying to access with invalid index: " << std::endl;
         numbers[MAX_VAL] = 0;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+	std::cout << "Changing all the value with 42: " << std::endl;
+	for (unsigned int i = 0; i < numbers.size(); i++)
+		numbers[i] = 42;
+	
+	for (unsigned int i = 0; i < 10; i++)
+		std::cout << numbers[i] << std::endl;
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }
