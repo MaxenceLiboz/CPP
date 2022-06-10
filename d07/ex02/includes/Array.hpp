@@ -108,8 +108,12 @@ unsigned int	Array<T>::size() const { return (this->_size); }
 template<typename T>
 std::ostream & operator<<(std::ostream & o, Array<T> const & var)
 {
+	if (var.size() == 0)
+	{
+		o << "List: []" << std::endl;
+	}
 	o << "List: [ ";
-	for (unsigned int i = 0; i < var.size() - 2; i++)
+	for (unsigned int i = 0; i < var.size() - 1; i++)
 	{
 		o << var[i] << ", "; 
 	}	

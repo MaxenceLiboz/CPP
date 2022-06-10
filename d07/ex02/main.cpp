@@ -6,7 +6,7 @@
 /*   By: mliboz <mliboz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:15:57 by mliboz            #+#    #+#             */
-/*   Updated: 2022/06/08 16:42:12 by mliboz           ###   ########.fr       */
+/*   Updated: 2022/06/10 11:39:31 by mliboz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,12 @@ int main(int, char**)
 	for (unsigned int i = 0; i < 10; i++)
 		std::cout << numbers[i] << std::endl;
 
+	std::cout << "Test Array vide with Array<int> and int * a = new int()" << std::endl;
+	Array<int> numbers1;
+	int * a = new int();
+	
+	std::cout << "List: [ " << *a << " ]" << std::endl;
+	std::cout << numbers1;
     delete [] mirror;
     return 0;
 }
